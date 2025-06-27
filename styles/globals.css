@@ -208,6 +208,11 @@ h1 {
 }
 /* Media Query */
 @media screen and (max-width: 768px) {
+  .iconList{
+    margin-top: "-20px";
+  }
+}
+@media screen and (max-width: 768px) {
   .flip {
     width: calc(4 * 75px+80px);
   }
