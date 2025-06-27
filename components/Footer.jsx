@@ -16,7 +16,7 @@ function Footer() {
         height: "100%",
         position: "relative",
         marginTop: "200px",
-        maxHeight: "300px",
+        minHeight: "280px",
       }}
     >
       <Image
@@ -25,7 +25,7 @@ function Footer() {
         fill
         style={{
           objectFit: "cover",
-          objectPosition: isMobile ? "80% 20%" : "top",
+          objectPosition: isMobile ? "85% 20%" : "top",
         }}
         priority
       />
