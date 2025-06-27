@@ -209,7 +209,8 @@ h1 {
 /* Media Query */
 @media screen and (max-width: 768px) {
   .iconList{
-    padding-bottom: "30px";
+    top: -50px;
+    bottom:50px;
   }
 }
 @media screen and (max-width: 768px) {
