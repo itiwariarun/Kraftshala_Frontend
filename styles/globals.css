@@ -83,7 +83,7 @@ h1 {
 .lowerCard span,
 .flipCardItem span {
   font-weight: bolder;
-  color: #d45172; /* Lightened black */
+  color: #d45172; 
 }
 
 .upperCard {

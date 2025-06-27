@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import FlipContainer from "./FlipContainer";
 
 const FlipClock = () => {
-  const launchDate = new Date(new Date().setDate(new Date().getDate() + 8));
-
+const launchDate = useMemo(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 8);
+    return date;
+  }, []);
   const [time, setTime] = useState({
     days: 0,
     hours: 0,
@@ -16,39 +19,32 @@ const FlipClock = () => {
   });
 
   useEffect(() => {
-    const timerID = setInterval(() => {
+    const updateCountdown = () => {
       const now = new Date();
-      const diff = Math.max(0, launchDate - now); // difference in ms
+      const diff = Math.max(0, launchDate - now);
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      setTime((prevTime) => ({
+      setTime((prev) => ({
         days,
         hours,
         minutes,
         seconds,
-        daysShuffle:
-          days !== prevTime.days ? !prevTime.daysShuffle : prevTime.daysShuffle,
-        hoursShuffle:
-          hours !== prevTime.hours
-            ? !prevTime.hoursShuffle
-            : prevTime.hoursShuffle,
-        minutesShuffle:
-          minutes !== prevTime.minutes
-            ? !prevTime.minutesShuffle
-            : prevTime.minutesShuffle,
-        secondsShuffle:
-          seconds !== prevTime.seconds
-            ? !prevTime.secondsShuffle
-            : prevTime.secondsShuffle,
+        daysShuffle: days !== prev.days ? !prev.daysShuffle : prev.daysShuffle,
+        hoursShuffle: hours !== prev.hours ? !prev.hoursShuffle : prev.hoursShuffle,
+        minutesShuffle: minutes !== prev.minutes ? !prev.minutesShuffle : prev.minutesShuffle,
+        secondsShuffle: seconds !== prev.seconds ? !prev.secondsShuffle : prev.secondsShuffle,
       }));
-    }, 1000);
+    };
 
-    return () => clearInterval(timerID);
-  }, []);
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(timer);
+  }, [launchDate]);
 
   const {
     days,
