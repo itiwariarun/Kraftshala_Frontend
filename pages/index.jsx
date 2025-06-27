@@ -15,13 +15,6 @@ export default function Home() {
       <div className="container">
         <h1>WE&lsquo;RE LAUNCHING SOON</h1>
         <FlipClock />
-        <div
-          style={{
-            width: "100%",
-            height: "60vh",
-            position: "relative",
-          }}
-        >
           <Image
             src="/images/bg-stars.svg"
             alt="Pattern stars"
@@ -29,7 +22,6 @@ export default function Home() {
             style={{ objectFit: "cover", objectPosition: "right top" }}
             priority
           />
-        </div>{" "}
         <Footer />
       </div>
     </>

@@ -13,9 +13,10 @@ function Footer() {
     <footer
       style={{
         width: "100%",
-        height: "100%",
+        height: "40%",
         position: "relative",
-        marginTop: "200px",
+        marginTop: "auto",
+        bottom: "0",
         minHeight: "280px",
       }}
     >
