@@ -26,7 +26,7 @@ function Footer() {
         fill
         style={{
           objectFit: "cover",
-          objectPosition: isMobile ? "90% top" : "top",
+          objectPosition: isMobile ? "78% top" : "top",
         }}
         priority
       />
