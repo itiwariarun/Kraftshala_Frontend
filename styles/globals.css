@@ -94,7 +94,7 @@ h1 {
   display: block;
   position: relative;
   width: 8.125rem;                /* 130px */
-  height: 6.25rem;                /* 100px */
+  height: 7.5rem;                /* 100px */
   perspective-origin: 50% 50%;
   perspective: 18.75rem;          /* 300px */
   background-color: #34364f;
@@ -276,8 +276,15 @@ h1 {
     bottom: -4.375rem;           /* -70px */
   }
 }
-
 @media screen and (min-width: 48rem) {
+  .upperCard span,
+  .lowerCard span,
+  .flipCardItem span,
+  .text span {
+    font-size: 2.75rem;
+  }
+}
+@media screen and (min-width: 50rem) {
   .upperCard span,
   .lowerCard span,
   .flipCardItem span,

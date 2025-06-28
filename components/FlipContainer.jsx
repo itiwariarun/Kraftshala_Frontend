@@ -26,7 +26,7 @@ const FlipContainer = ({ digit, shuffle, unit }) => {
   return (
     <div className="itemClass">
       <div className="animatedCardContainer"> <div className="flipCardContainer">
-        <div classname="dot">
+        <div className="dot">
           <span className="rightDot" />
           <span className="leftDot" />
         </div>

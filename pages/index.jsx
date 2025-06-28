@@ -19,7 +19,7 @@ export default function Home() {
             src="/images/bg-stars.svg"
             alt="Pattern stars"
             fill
-            style={{ objectFit: "cover", objectPosition: "right top" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
             priority
           />
         <Footer />
