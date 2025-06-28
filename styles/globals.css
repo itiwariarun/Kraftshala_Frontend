@@ -70,7 +70,7 @@ h1 {
   justify-content: space-between;
   width: calc(4 * 8.125rem + 7rem);
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 400px) {
   .flip {
   flex-wrap: wrap;
   }
