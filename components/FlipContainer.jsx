@@ -25,7 +25,7 @@ const FlipContainer = ({ digit, shuffle, unit }) => {
 
   return (
     <div className="itemClass">
-      <div className="flipCardContainer">
+      <div className="animatedCardContainer"> <div className="flipCardContainer">
         <div classname="dot">
           <span className="rightDot" />
           <span className="leftDot" />
@@ -34,6 +34,8 @@ const FlipContainer = ({ digit, shuffle, unit }) => {
         <StaticCard position="lowerCard" digit={previousDigit} />
         <AnimatedCard digit={digit1} animation={animation1} />
         <AnimatedCard digit={digit2} animation={animation2} />
+      </div>
+        <div className="cardBackground" />
       </div>
       <p>{unit}</p>
     </div>
