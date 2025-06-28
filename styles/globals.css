@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;700&display=swap");
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Red Hat Text", sans-serif;
@@ -22,52 +44,62 @@ body {
   align-items: center;
   margin: auto;
   height: 100%;
-    min-height: 100vh;
-
+  min-height: 100vh;
   background: linear-gradient(to bottom, #1f1f29 0%, #231d2b 40%);
 }
+
 h1 {
   font-size: 1.5rem;
-  padding-inline: 40px;
-  letter-spacing: 6px;
+  padding-inline: 2.5rem;         /* 40px */
+  letter-spacing: 0.375rem;       /* 6px */
   color: #f1f0f1;
-  margin-top: 80px;
+  margin-top: 5rem;               /* 80px */
   margin-inline: auto;
   text-align: center;
   width: fit-content;
-  margin-bottom: 70px;
+  margin-bottom: 4.375rem;        /* 70px */
 }
 
 .flip {
   display: flex;
-  gap: 20px;
+  max-width:95vw;
+  padding-inline:1rem;
+  gap: 1.25rem;                   /* 20px */
   margin-inline: auto;
+  z-index: 20;
   justify-content: space-between;
-  width: calc(4 * 130px+80px);
+  width: calc(4 * 8.125rem + 7rem);
+}
+@media screen and (max-width: 480px) {
+  .flip {
+  flex-wrap: wrap;
+  }
 }
 .itemClass {
   display: flex;
   flex-direction: column;
+  margin-inline: auto;
   gap: 0.5rem;
-  p {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 0.625rem;
-    letter-spacing: 2px;
-    color: #818198;
-    font-weight: 600;
-  }
 }
+.itemClass p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.125rem;       /* 2px */
+  color: #818198;
+  font-weight: 600;
+}
+
 .flipCardContainer {
   display: block;
   position: relative;
-  width: 130px;
-  height: 100px;
+  width: 8.125rem;                /* 130px */
+  height: 6.25rem;                /* 100px */
   perspective-origin: 50% 50%;
-  perspective: 300px;
+  perspective: 18.75rem;          /* 300px */
   background-color: #34364f;
-  border-radius: 6px;
-  box-shadow: 0px 10px 10px -10px #191a24;
+  border-radius: 0.375rem;        /* 6px */
+  box-shadow: 0 0.625rem 0.625rem -0.625rem #191a24;
 }
 
 .upperCard,
@@ -84,14 +116,14 @@ h1 {
 .lowerCard span,
 .flipCardItem span {
   font-weight: bolder;
-  color: #d45172; 
+  color: #d45172;
 }
 
 .upperCard {
   align-items: flex-end;
   background-color: #2c2c44;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
 }
 
 .upperCard span {
@@ -100,8 +132,8 @@ h1 {
 
 .lowerCard {
   align-items: flex-start;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
 }
 
 .lowerCard span {
@@ -128,14 +160,15 @@ h1 {
   font-weight: bolder;
   color: #d45172;
 }
+
 .flipCardItem.unfold {
   top: 50%;
   align-items: flex-start;
   transform-origin: 50% 0%;
   transform: rotateX(180deg);
   background-color: #34364f;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
   animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
   transform-style: preserve-3d;
 }
@@ -150,8 +183,8 @@ h1 {
   transform-origin: 50% 100%;
   transform: rotateX(0deg);
   background-color: #34364f;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
   animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
   transform-style: preserve-3d;
 }
@@ -160,31 +193,31 @@ h1 {
   transform: translateY(50%);
 }
 
-.rightDot {
-  height: 8px;
-  width: 16px;
+.rightDot,
+.leftDot {
+  height: 0.5rem;                 /* 8px */
+  width: 1rem;                    /* 16px */
   position: absolute;
-  right: -6px;
-  top: 47%;
+  top:0;
+  bottom:0;
+  display: flex;
+  align-items: center;
+  margin-block: auto;
   z-index: 30;
-  rotate: -90deg;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
   background: #1a1c2a;
   overflow: hidden;
 }
+
+.rightDot {
+  right: -0.375rem;              /* -6px */
+  rotate: -90deg;
+}
+
 .leftDot {
-  height: 8px;
-  width: 16px;
-  position: absolute;
-  left: -6px;
-  top: 47%;
-  z-index: 30;
+  left: -0.375rem;
   rotate: 90deg;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  background: #1a1c2a;
-  overflow: hidden;
 }
 
 .iconList {
@@ -192,9 +225,9 @@ h1 {
   display: flex;
   align-items: center;
   bottom: 0;
-  top: 160px;
-  right: 0px;
-  left: 0px;
+  top: 10rem;                     /* 160px */
+  right: 0;
+  left: 0;
   height: fit-content;
   justify-content: center;
   gap: 2rem;
@@ -203,51 +236,45 @@ h1 {
 .iconList > svg {
   fill: #8385a9 !important;
 }
+
 .iconList > svg:hover {
   fill: #f75880 !important;
   transition: all 0.25s ease-in;
   cursor: pointer;
 }
-/* Media Query */
 
-@media screen and (max-width: 768px) {
+/* Media Query */
+@media screen and (max-width: 48rem) {
   .flip {
-    width: calc(4 * 75px+80px);
+    width: calc(4 * 4.6875rem + 5rem);
   }
+
   .flipCardContainer {
-    width: 75px;
-    height: 70px;
+    width: 4.6875rem;             /* 75px */
+    height: 4.375rem;             /* 70px */
   }
+
   .upperCard span,
   .lowerCard span,
-  .flipCardItem span {
-    font-size: 2rem;
-  }
+  .flipCardItem span,
   .text span {
     font-size: 2rem;
   }
-  .flipCardItem span {
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .upperCard span,
-  .lowerCard span,
-  .flipCardItem span {
-    font-size: 4rem;
-  }
-  .text span {
-    font-size: 4rem;
-  }
-  .flipCardItem span {
-    font-size: 4rem;
-  }
-}
-@media screen and (max-width: 768px) {
+
   .iconList {
-    bottom: -70px;
+    bottom: -4.375rem;           /* -70px */
   }
 }
+
+@media screen and (min-width: 48rem) {
+  .upperCard span,
+  .lowerCard span,
+  .flipCardItem span,
+  .text span {
+    font-size: 4rem;
+  }
+}
+
 /* animation key frame */
 @keyframes fold {
   0% {
